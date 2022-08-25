@@ -4,7 +4,7 @@ import styled from "styled-components";
 export const NavBarWrapper = styled.nav`
     position: absolute;
     left: 0;
-    top: 0;
+    top: 15px;
     width: 100%;
 
     & div:first-child {

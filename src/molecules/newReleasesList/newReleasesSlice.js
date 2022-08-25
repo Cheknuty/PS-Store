@@ -2,11 +2,11 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 const URL = "https://fakegame.herokuapp.com/"
 
-export const fetchTredingGames = createAsyncThunk(
-    'games/fetchTredingGames',
+export const fetchNewReleaseGames = createAsyncThunk(
+    'games/fetchNewReleaseGames',
     async function(_, {rejectWithValue}) {
         try {
-            const res = await fetch(URL + `trending`);
+            const res = await fetch(URL + `new_releases`);
             if(!res.ok) {
                 throw new Error("Server Error!")
             }
@@ -19,8 +19,8 @@ export const fetchTredingGames = createAsyncThunk(
     }
 )
 
-const trendingListSlice = createSlice({
-    name: "trendingList",
+const newReleaseListSlice = createSlice({
+    name: "newReleaseList",
     initialState: {
         games: [],
         status: "idle",
@@ -31,18 +31,18 @@ const trendingListSlice = createSlice({
     },
 
     extraReducers: {
-        [fetchTredingGames.pending]: (state) => {
+        [fetchNewReleaseGames.pending]: (state) => {
             state.status = "loading";
             state.error = null;
         },
-        [fetchTredingGames.fulfilled]: (state, action) => {
+        [fetchNewReleaseGames.fulfilled]: (state, action) => {
             state.status = "resolved";
             state.games = action.payload; 
         },
-        [fetchTredingGames.rejected]: (state) => {
+        [fetchNewReleaseGames.rejected]: (state) => {
             state.status = "rejected"
         }
     }
 })
 
-export default trendingListSlice.reducer;
+export default newReleaseListSlice.reducer;

@@ -1,11 +1,12 @@
 import { useEffect, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Route, Routes } from "react-router-dom";
 import { AppContnet, AppWrapper } from "./App.style";
 import { SiteTitle } from "./atoms/siteTitle/siteTitle.comp";
 import { Wrapper } from "./atoms/wrapper/wrapper.comp";
 import { Header } from "./molecules/header/header.comp";
 import { HiddenMenu } from "./molecules/hiddenMenu/hiddenMenu.comp";
+import { fetchNewReleaseGames } from "./molecules/newReleasesList/newReleasesSlice";
 import { TopLine } from "./molecules/topLine/topLine.comp";
 import { fetchTredingGames } from "./molecules/trendingList/trendingListSlice";
 import { Home } from "./pages/home/home.comp";
@@ -14,10 +15,9 @@ function App() {
   const dispatch = useDispatch()
   useEffect(() => {
     dispatch(fetchTredingGames())
+    dispatch(fetchNewReleaseGames())
     // eslint-disable-next-line
   },[])
-  const list = useSelector(state => state)
-  console.log(list)
   const clicker = () => {
     content.current.closest("#root").querySelector("div").childNodes[0].classList.remove("active--menu")
     content.current.closest("#root").querySelector("div").childNodes[1].classList.remove("active--content")

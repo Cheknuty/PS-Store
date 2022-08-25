@@ -6,6 +6,15 @@ export const TitlePrimaryWrapper = styled.header`
     align-items: center;
     justify-content: space-between;
     margin-bottom: 34px;
+
+    @media screen and (max-width: 600px) {
+        margin-bottom: 22px;
+
+        & h2 {
+            font-size: 22px;
+            line-height: 20px;
+        }
+    }
 `
 
 export const TitlePrimarHeading = styled.h2`

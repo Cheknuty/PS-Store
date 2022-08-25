@@ -1,16 +1,19 @@
 import { Tag } from "../tag/tag.comp";
-import { WideItemButton, WideItemContent, WideItemCost, WideItemTitle, WideItemWrapper } from "./wideItem.style";
+import { WideItemButton, WideItemContent, WideItemCost, WideItemImg, WideItemText, WideItemTitle, WideItemWrapper } from "./wideItem.style";
 
 
-export function WideItem({tag, title, cost}) {
+export function WideItem({tag, title, img, after}) {
     return (
         <WideItemWrapper>
-            <Tag text={tag}/>
-            <WideItemTitle>{title}</WideItemTitle>
-            <WideItemContent>
-                <WideItemCost>{cost}</WideItemCost>
-                <WideItemButton>Add To Cart</WideItemButton>
-            </WideItemContent>
+            <WideItemImg src={img} />
+            <WideItemText>
+                <Tag text={tag}/>
+                <WideItemTitle>{title}</WideItemTitle>
+                <WideItemContent>
+                    <WideItemCost>{after}</WideItemCost>
+                    <WideItemButton>Add To Cart</WideItemButton>
+                </WideItemContent>
+            </WideItemText>
         </WideItemWrapper>
     )
 }

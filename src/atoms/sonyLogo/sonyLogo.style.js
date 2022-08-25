@@ -9,4 +9,8 @@ export const SonyLogoIcon = styled.img`
         width: 60px;
         height: auto;
     }
+
+    @media screen and (max-width: 600px) {
+        width: 50px;
+    }
 `

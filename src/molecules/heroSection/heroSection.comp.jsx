@@ -4,6 +4,7 @@ import { HeroSectionHeader, HeroSectionHeaderImg, HeroSectionHeaderText, HeroSec
 import heroLogo from "../../assests/img/heroLogo.png"
 import { CostButtonBig } from "../../atoms/costButtonBig/costButtonBig.comp";
 import { TrendingList } from "../trendingList/trendingList.comp";
+import { NewReleasesList } from "../newReleasesList/newReleasesList.comp";
 
 export function HeroSection() {
     return (
@@ -17,6 +18,7 @@ export function HeroSection() {
                     </HeroSectionHeaderText>
                 </HeroSectionHeader>
                 <TrendingList />
+                <NewReleasesList />
             </Container>
         </HeroSectionWrapper>
     )

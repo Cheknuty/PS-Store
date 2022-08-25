@@ -9,5 +9,5 @@ export const AppContnet = styled.article`
 `
 
 export const AppWrapper = styled.div`
-    background-color: var(--color-stroke);
+    background-color: var(--color-secondary);
 `

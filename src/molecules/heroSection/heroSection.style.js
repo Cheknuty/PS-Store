@@ -6,7 +6,7 @@ export const HeroSectionWrapper = styled.div`
     background-image: url(${bg});
     background-repeat: no-repeat;
     background-position-x: center;
-    background-size: contain;
+    background-size: 1800px;
 
     @media
     only screen and (-webkit-min-device-pixel-ratio: 2),
@@ -17,6 +17,10 @@ export const HeroSectionWrapper = styled.div`
     only screen and (min-resolution: 2dppx) {
         background-image: url(${bg2x});
     }
+
+    @media screen and (max-width: 900px) {
+        background-size: 930px;
+    }
 `
 
 export const HeroSectionHeader = styled.div`
@@ -25,6 +29,15 @@ export const HeroSectionHeader = styled.div`
     justify-content: space-between;
     width: 100%;
     margin-bottom: 34px;
+
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+        text-align: center;
+
+        & img {
+            width: 270px;
+        }
+    }
 `
 
 export const HeroSectionHeaderImg = styled.img`
@@ -32,10 +45,19 @@ export const HeroSectionHeaderImg = styled.img`
 `
 
 export const HeroSectionHeaderText = styled.div`
-    text-align: right;
 
     & span {
         margin-bottom: 12px;
         margin-left: auto;
+    }
+
+    @media screen and (max-width: 600px) {
+        & span {
+            margin: 0;
+            margin-top: 10px;
+        }
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
     }
 `

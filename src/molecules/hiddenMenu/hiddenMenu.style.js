@@ -21,6 +21,10 @@ export const HiddenMenuBody = styled.div`
     & button {
         margin: 50px 10px 20px auto;
     }
+
+    @media screen and (max-width: 600px) {
+        width: 40%;
+    }
     
 `
 
@@ -31,7 +35,6 @@ export const HiddenMenuList = styled.ul`
 `
 
 export const HiddenMenuItem = styled.li`
-    
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,5 +55,13 @@ export const HiddenMenuItem = styled.li`
 
     &:not(:last-child) {
         margin-bottom: 10px;
+    }
+
+    @media screen and (max-width: 600px) {
+        font-size: 12px;
+        justify-content: left;
+        &:not(:last-child) {
+            margin-bottom: 27px;
+        }
     }
 `

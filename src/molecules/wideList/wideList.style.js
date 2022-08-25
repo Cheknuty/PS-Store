@@ -12,4 +12,8 @@ export const WideListSet = styled.ul`
     display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @media screen and (max-width: 900px) {
+        flex-direction: column;
+    }
 `
