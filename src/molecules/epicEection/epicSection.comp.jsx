@@ -9,7 +9,7 @@ export function EpicSection() {
     const { id } = useParams()
     const allGames = useSelector(state => state.allGamesList.games)
     const status = useSelector(state => state.allGamesList.status)
-    const game = allGames.find(game => game.id === id)
+    const game = allGames.find(game => game.id === id);
     console.log(game)
     return (
         <>
