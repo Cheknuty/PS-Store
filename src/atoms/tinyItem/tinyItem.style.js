@@ -7,6 +7,10 @@ export const TinyItemWrapper = styled.li`
     overflow: hidden;
     background-color: var(--color-secondary);
 
+    & a {
+        text-decoration: none;
+    }
+
     @media screen and (max-width: 1400px) {
         & img {
             height: 300px;

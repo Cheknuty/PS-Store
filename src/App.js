@@ -4,11 +4,14 @@ import { Route, Routes } from "react-router-dom";
 import { AppContnet, AppWrapper } from "./App.style";
 import { SiteTitle } from "./atoms/siteTitle/siteTitle.comp";
 import { Wrapper } from "./atoms/wrapper/wrapper.comp";
+import { fetchComingSoonGames } from "./molecules/comingSoonSection/comingSoonSectionSlice";
 import { Header } from "./molecules/header/header.comp";
 import { HiddenMenu } from "./molecules/hiddenMenu/hiddenMenu.comp";
 import { fetchNewReleaseGames } from "./molecules/newReleasesList/newReleasesSlice";
 import { TopLine } from "./molecules/topLine/topLine.comp";
 import { fetchTredingGames } from "./molecules/trendingList/trendingListSlice";
+import { fetchAllGames } from "./pages/explore/exploreSlice";
+import { Game } from "./pages/game/game.comp";
 import { Home } from "./pages/home/home.comp";
 function App() {
   const content = useRef()
@@ -16,6 +19,8 @@ function App() {
   useEffect(() => {
     dispatch(fetchTredingGames())
     dispatch(fetchNewReleaseGames())
+    dispatch(fetchComingSoonGames())
+    dispatch(fetchAllGames())
     // eslint-disable-next-line
   },[])
   const clicker = () => {
@@ -33,6 +38,7 @@ function App() {
         <AppWrapper onClick={clicker}>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/game/:id" element={<Game />} />
           </Routes>
         </AppWrapper>
       </AppContnet>

@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import bg from "../../assests/img/hero.jpg"
 import bg2x from "../../assests/img/hero@2x.jpg"
+
+
 export const HeroSectionWrapper = styled.div`
     padding: 330px 0 51px 0;
     background-image: url(${bg});

@@ -1,5 +1,6 @@
 import { useSelector } from "react-redux";
 import { WideItem } from "../../atoms/wideItem/wideItem.comp";
+import { WideItemSkeleton } from "../../atoms/wideItemSkeleton/wideItemSkeleton.comp";
 import { WideList } from "../wideList/wideList.comp";
 import { TrendingListWrapper } from "./trendingList.style";
 
@@ -11,10 +12,12 @@ export function TrendingList() {
         <TrendingListWrapper>
             <WideList text="Trending">
                 {
-                    status === "resolved" && 
-                    trendingGames.map(game => <WideItem key={game.id} tag={game.fet} title={game.title} after={game.after} img={game.img} />) 
+                    status === "resolved" ?
+                    trendingGames.map(game => <WideItem id={game.id} key={game.id} tag={game.fet} title={game.title} after={game.after} img={game.img} />) :
+                <><WideItemSkeleton />
+                <WideItemSkeleton />
+                <WideItemSkeleton /></>
                 }
-                
             </WideList>
         </TrendingListWrapper>
     )
