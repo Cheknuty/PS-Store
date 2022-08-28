@@ -5,6 +5,7 @@ export const DropDownrapper = styled.div`
     max-width: 115px;
     width: 100%;
     cursor: pointer;
+    position: relative;
     
     & ul {
         display: none;

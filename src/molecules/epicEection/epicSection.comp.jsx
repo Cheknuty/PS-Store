@@ -10,7 +10,6 @@ export function EpicSection() {
     const allGames = useSelector(state => state.allGamesList.games)
     const status = useSelector(state => state.allGamesList.status)
     const game = allGames.find(game => game.id === id);
-    console.log(game)
     return (
         <>
             {
@@ -35,7 +34,7 @@ export function EpicSection() {
                             </EpicSectionContent>
                         </Container>
                     </EpicSectionWrapper> :
-                    <>Loading</>
+                    <p color="red">Loading</p>
             }
         </>
     )

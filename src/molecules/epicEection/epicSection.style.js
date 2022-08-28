@@ -14,8 +14,6 @@ export const EpicSectionWrapper = styled.section`
         padding: 40px;
         & div:first-child {
             flex-direction: column;
-            padding-bottom: 30px;
-            border-bottom: 2px solid var(--color-stroke);
         }
     }
 

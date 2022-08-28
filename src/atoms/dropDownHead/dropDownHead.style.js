@@ -7,6 +7,8 @@ export const DropDownHeadWrapper = styled.h3`
     line-height: 19px;
     color: var(--color-stroke);
     margin: 0;
+    position: relative;
+    z-index: 100;
 
     &::after {
         content: "";
