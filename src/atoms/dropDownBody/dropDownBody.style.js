@@ -9,8 +9,10 @@ export const DropDownBodyWrapper = styled.ul`
     max-width: 115px;
     width: 100%;
     background-color: var(--color-light);
-    top: 30px;
+    top: 77px;
     border-radius: 3px;
+    padding-top: 20px;
+    z-index: 10;
 `
 
 export const DropDownBodyItem = styled.li`
@@ -18,3 +20,4 @@ export const DropDownBodyItem = styled.li`
     font-size: 15px;
     font-weight: 500;
 `
+

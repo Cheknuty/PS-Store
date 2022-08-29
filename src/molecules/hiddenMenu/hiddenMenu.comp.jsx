@@ -12,22 +12,22 @@ export function HiddenMenu() {
                     <Link to="/">DISCOVER</Link>
                 </HiddenMenuItem>
                 <HiddenMenuItem>
-                    <Link to="/expore">EXPLORE</Link>
+                    <Link to="/">EXPLORE</Link>
                 </HiddenMenuItem>
                 <HiddenMenuItem>
-                    <Link to="/collection">COLLECTIONS</Link>
+                    <Link to="/">COLLECTIONS</Link>
                 </HiddenMenuItem>
                 <HiddenMenuItem>
-                    <Link to="/deals">DEALS</Link>
+                    <Link to="/">DEALS</Link>
                 </HiddenMenuItem>
                 <HiddenMenuItem>
-                    <Link to="/subpscription">SUBSCRIPTIONS</Link>
+                    <Link to="/">SUBSCRIPTIONS</Link>
                 </HiddenMenuItem>
                 <HiddenMenuItem>
-                    <Link to="/profile">Profile</Link>
+                    <Link to="/">Profile</Link>
                 </HiddenMenuItem>
                 <HiddenMenuItem>
-                    <Link to="/favourites">Favorites</Link>
+                    <Link to="/">Favorites</Link>
                 </HiddenMenuItem>
                 <HiddenMenuItem>
                     <Link to="/cart">Cart</Link>

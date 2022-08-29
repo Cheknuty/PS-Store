@@ -4,7 +4,7 @@ import { TagDark } from "../tagDark/tagDark.comp";
 import { TinyItemCompany, TinyItemContent, TinyItemImg, TinyItemTitle, TinyItemWrapper } from "./tinyItem.style";
 
 
-export function TinyItem({tag, title, before, after, img, company, id}) {
+export function TinyItem({ game: {fet, title, before, after, img, company, id, isbought}}) {
     return (
         <TinyItemWrapper>
         <Link to={`game/${id}`}>
@@ -12,8 +12,8 @@ export function TinyItem({tag, title, before, after, img, company, id}) {
             <TinyItemContent>
                 <TinyItemTitle>{title}</TinyItemTitle>
                 <TinyItemCompany>{company}</TinyItemCompany>
-                <TagDark text={tag} />
-                <CostButtonLight before={before} after={after} />
+                <TagDark text={fet} />
+                <CostButtonLight id={id} before={before} after={after} isbought={isbought} />
             </TinyItemContent>
         </Link>
     </TinyItemWrapper>

@@ -11,13 +11,13 @@ export function NavBar() {
 
                 <NavBarBox>
                     <NavLink to="/">DISCOVER </NavLink>|
-                    <NavLink to="/explore"> EXPLORE</NavLink>
+                    <NavLink to="/"> EXPLORE</NavLink>
                 </NavBarBox>
 
                 <NavBarBox>
-                    <NavLink to="/collections">COLLECTIONS </NavLink>|
-                    <NavLink to="/deals"> DEALS </NavLink>|
-                    <NavLink to="/subscriptions"> SUBSCRIPTIONS</NavLink>
+                    <NavLink to="/">COLLECTIONS </NavLink>|
+                    <NavLink to="/"> DEALS </NavLink>|
+                    <NavLink to="/"> SUBSCRIPTIONS</NavLink>
                 </NavBarBox>
 
             </Container>

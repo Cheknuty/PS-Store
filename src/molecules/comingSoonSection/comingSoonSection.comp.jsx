@@ -15,7 +15,7 @@ export function ComingSoonSection() {
                 <TinyList text="Coming Soon">
                     {
                         status === "resolved" ?
-                        comingSoonGames.map(game => <TinyItem id={game.id} key={game.id} title={game.title} img={game.img} company={game.company} tag={game.fet} before={game.before} after={game.after} />) :
+                        comingSoonGames.map(game => <TinyItem key={game.id} game={game} />) :
                         <>
                             <TinyItemSkeleton />
                             <TinyItemSkeleton />

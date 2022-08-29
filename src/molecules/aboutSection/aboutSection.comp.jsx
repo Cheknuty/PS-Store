@@ -33,7 +33,7 @@ export function AboutSection() {
                         <AboutSectionInfoTitle>platform</AboutSectionInfoTitle>
                         <AboutSectionInfoSubtitle>{game.fet}</AboutSectionInfoSubtitle>
                     </AboutSectionInfo>
-                    <CostButtonLight after="Add To Cart" before="" />
+                    <CostButtonLight after="Add To Cart" before="" isbought={game.isbought} id={game.id} />
                 </AboutSectionInfoContent>
             </Container>
         </AboutSectionWrapper>

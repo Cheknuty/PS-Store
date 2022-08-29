@@ -6,7 +6,7 @@ export const fetchTredingGames = createAsyncThunk(
     'games/fetchTredingGames',
     async function(_, {rejectWithValue}) {
         try {
-            const res = await fetch(URL + `trending`);
+            const res = await fetch(URL + `all?category=trending`);
             if(!res.ok) {
                 throw new Error("Server Error!")
             }

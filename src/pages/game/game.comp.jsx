@@ -7,7 +7,6 @@ import { GameWrapper } from "./game.style"
 
 export function Game() {
     const status = useSelector(state => state.allGamesList.status)
-    console.log(status)
     return (
         <GameWrapper>
             {

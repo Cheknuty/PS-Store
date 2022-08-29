@@ -109,4 +109,13 @@ export const WideItemButton = styled.button`
     border: none;
     box-shadow: 0px 0px 15px #0072CE;
     color: var(--color-light);
+
+    &:disabled {
+        opacity: 0.8;
+        box-shadow: none;
+    }
+
+    &:not(:disabled) {
+        cursor: pointer;
+    }
 `

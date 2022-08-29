@@ -14,6 +14,16 @@ export const CostButtonLightWrapper = styled.button`
     box-shadow: 0px 0px 15px var(--color-ps-blue);
     border-radius: 10px;
     width: 100%;
+    color: var(--color-light);
+
+    &:disabled {
+        opacity: 0.7;
+        box-shadow: none;
+    }
+
+    &:not(:disabled) {
+        cursor: pointer;
+    }
 `
 
 export const CostButtonLightBefore = styled.span`

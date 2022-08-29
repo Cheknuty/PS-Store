@@ -13,7 +13,7 @@ export function NewReleasesList() {
             <TinyList text="New Releases">
                 {
                     status === "resolved" ?
-                    newReleaseGames.map(game => <TinyItem id={game.id} key={game.id} before={game.before} after={game.after} title={game.title} img={game.img} company={game.company} tag={game.fet} />) :
+                    newReleaseGames.map(game => <TinyItem key={game.id} game={game} />) :
                     <>
                         <TinyItemSkeleton />
                         <TinyItemSkeleton />

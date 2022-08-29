@@ -13,7 +13,7 @@ export function TrendingList() {
             <WideList text="Trending">
                 {
                     status === "resolved" ?
-                    trendingGames.map(game => <WideItem id={game.id} key={game.id} tag={game.fet} title={game.title} after={game.after} img={game.img} />) :
+                    trendingGames.map(game => <WideItem key={game.id} game={game} />) :
                 <><WideItemSkeleton />
                 <WideItemSkeleton />
                 <WideItemSkeleton /></>
