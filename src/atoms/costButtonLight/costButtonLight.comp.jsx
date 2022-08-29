@@ -1,7 +1,6 @@
 import { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addPurchasedGames } from "../../pages/cartPage/cartSlice";
-import { fetchAllGames } from "../../pages/explore/exploreSlice";
 import { CostButtonLightAfter, CostButtonLightBefore, CostButtonLightWrapper } from "./costButtonLight.style";
 
 
