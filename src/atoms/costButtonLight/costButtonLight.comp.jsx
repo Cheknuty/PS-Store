@@ -1,6 +1,7 @@
 import { useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addPurchasedGames } from "../../pages/cartPage/cartSlice";
+import { fetchAllGames } from "../../pages/explore/exploreSlice";
 import { CostButtonLightAfter, CostButtonLightBefore, CostButtonLightWrapper } from "./costButtonLight.style";
 
 
@@ -14,6 +15,7 @@ export function CostButtonLight({ before, after, id, isbought }) {
         e.preventDefault()
         if(game.isbought !== true) {
             dispatch(addPurchasedGames(game))
+            dispatch(fetchAllGames())
             button.current.innerHTML = "Purchased"
             setValue(true)   
         }

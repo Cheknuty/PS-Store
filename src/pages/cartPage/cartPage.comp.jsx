@@ -25,7 +25,7 @@ export function CartPage() {
                         status === "resolved" ?
                         games.length !== 0 ?
                         games.map(game => <CartItem key={game.id} game={game} />) : <CartIcon />
-                        : <>loading</>
+                        : <CartIcon />
                     }
                 </CartList>
             </Container>
