@@ -15,7 +15,6 @@ export function CostButtonLight({ before, after, id, isbought }) {
         e.preventDefault()
         if(game.isbought !== true) {
             dispatch(addPurchasedGames(game))
-            dispatch(fetchAllGames())
             button.current.innerHTML = "Purchased"
             setValue(true)   
         }
