@@ -14,6 +14,7 @@ import { fetchTredingGames } from "./molecules/trendingList/trendingListSlice";
 import { CartPage } from "./pages/cartPage/cartPage.comp";
 import { fetchAllGames } from "./pages/explore/exploreSlice";
 import { Game } from "./pages/game/game.comp";
+import { FavouritePage } from "./pages/favouritePage/favouritePage.comp";
 import { Home } from "./pages/home/home.comp";
 function App() {
   const content = useRef()
@@ -41,6 +42,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/game/:id" element={<Game />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/favourite" element={<FavouritePage />} />
           </Routes>
         </AppWrapper>
         <Footer />

@@ -60,4 +60,8 @@ export const TinyItemCompany = styled.p`
     & + span {
         margin-bottom: 13px;
     }
+
+    & + span + button {
+        margin-bottom: 13px;
+    } 
 `

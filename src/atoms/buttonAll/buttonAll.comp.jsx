@@ -1,8 +1,9 @@
+import { Link } from "react-router-dom";
 import { ButtonAllWrapper } from "./buttonAll.style";
 
 
 export function ButtonAll() {
     return (
-        <ButtonAllWrapper>VIEW ALL +</ButtonAllWrapper>
+        <Link to="/explore"><ButtonAllWrapper>VIEW ALL +</ButtonAllWrapper></Link>
     )
 }

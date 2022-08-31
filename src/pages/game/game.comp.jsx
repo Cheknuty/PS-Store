@@ -9,6 +9,7 @@ import { useEffect } from "react"
 export function Game() {
     const status = useSelector(state => state.allGamesList.status)
     const dispatch = useDispatch()
+    
 
     useEffect(() => {
       dispatch(fetchAllGames())

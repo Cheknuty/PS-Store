@@ -8,6 +8,7 @@ import { fetchNewReleaseGames } from "../../molecules/newReleasesList/newRelease
 import { fetchTredingGames } from "../../molecules/trendingList/trendingListSlice";
 import { fetchComingSoonGames } from "../../molecules/comingSoonSection/comingSoonSectionSlice"
 import { fetchAllGames } from "../explore/exploreSlice"; 
+import { PSNowSection } from "../../molecules/PSNowSection/PSNowSection.comp";
 export function Home() {
     const dispatch = useDispatch()
     useEffect(() => {
@@ -21,6 +22,7 @@ export function Home() {
         <HomeWrapper>
             <NavBar />
             <HeroSection />
+            <PSNowSection />
             <ComingSoonSection />
         </HomeWrapper>
     )

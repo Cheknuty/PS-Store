@@ -1,12 +1,15 @@
+import { ListPrimary } from "../../atoms/listPrimary/listPrimary.comp";
 import { TitlePrimary } from "../titlePrimary/titlePrimary.comp";
-import { TinyListSet, TinyListWrapper } from "./tinyList.style";
+import { TinyListWrapper } from "./tinyList.style";
 
 
 export function TinyList({text, children}) {
     return (
         <TinyListWrapper>
             <TitlePrimary text={text} />
-            <TinyListSet>{children}</TinyListSet>
+            <ListPrimary>
+                {children}
+            </ListPrimary>
         </TinyListWrapper>
     )
 }

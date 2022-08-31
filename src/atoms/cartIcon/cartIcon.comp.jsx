@@ -1,7 +1,7 @@
 import { CartIconDesc, CartIconWrapper } from "./cartIcon.style";
 
 
-export function CartIcon() {
+export function CartIcon({text}) {
    
     return (
         <CartIconWrapper>
@@ -26,7 +26,7 @@ export function CartIcon() {
                     <ellipse cx="50.789" cy="57.988" rx="3.421" ry="6.181" fill="var(--color-stroke)" />
                 </g>
             </svg>
-            <CartIconDesc>You haven't purchased the game yet</CartIconDesc>
+            <CartIconDesc>{text}</CartIconDesc>
         </CartIconWrapper>
     )
 }

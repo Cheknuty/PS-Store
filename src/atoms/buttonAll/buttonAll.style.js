@@ -9,4 +9,6 @@ export const ButtonAllWrapper = styled.button`
     background-color: transparent;
     padding: 0 5px;
     color: var(--color-light);
+    text-decoration: none;
+    cursor: pointer;
 `

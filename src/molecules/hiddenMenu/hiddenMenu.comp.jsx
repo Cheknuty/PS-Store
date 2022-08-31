@@ -27,7 +27,7 @@ export function HiddenMenu() {
                     <Link to="/">Profile</Link>
                 </HiddenMenuItem>
                 <HiddenMenuItem>
-                    <Link to="/">Favorites</Link>
+                    <Link to="/favourite">Favorites</Link>
                 </HiddenMenuItem>
                 <HiddenMenuItem>
                     <Link to="/cart">Cart</Link>

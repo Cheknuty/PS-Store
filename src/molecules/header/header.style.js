@@ -25,11 +25,15 @@ export const HeaderBox = styled.div`
         margin-right: 10px;
     }
 
-    & img:nth-child(2), & img:nth-child(3) {
+    & img:nth-child(2), & a:nth-child(3) {
         margin-right: 10px;
     }
 
-    & img:nth-child(4) {
+    & a:nth-child(4) {
+        margin-right: 16px;
+    }
+
+    & img:nth-child(5) {
         margin-right: 16px;
     }
 

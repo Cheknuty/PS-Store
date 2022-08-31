@@ -1,8 +1,8 @@
-import { LikeIcon } from "./like.style";
-import like from "../../assests/img/like.svg"
+import { Link } from "react-router-dom";
+import { LikeIcon } from "../likeIcon/likeIcon.comp";
 
 export function Like() {
     return (
-        <LikeIcon src={like} width="22" height="20" alt="like" />
+        <Link to="/favourite"><LikeIcon sizes="normal" /></Link>
     )
 }

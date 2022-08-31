@@ -27,7 +27,9 @@ const exploreSlice = createSlice({
         error: null,
     },
     reducers: {
-        
+        updateBoughtGame(state, action) {
+            console.log(state)
+        }
     },
 
     extraReducers: {
@@ -46,5 +48,5 @@ const exploreSlice = createSlice({
 })
 
 
-
+// export const [updateBoughtGame] = exploreSlice.actions
 export default exploreSlice.reducer;

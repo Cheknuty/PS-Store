@@ -5,31 +5,31 @@ import { CartItem } from "../../atoms/cartItem/cartItem.comp";
 import { CartList } from "../../atoms/cartList/cartList.comp";
 import { TitlePrimary } from "../../atoms/titlePrimary/titlePrimary.comp";
 import { Container } from "../../molecules/container/container.comp";
-import { CartWrapper } from "./cartPage.style";
-import { fetchPurchasedGames } from "./cartSlice";
+import { FavouritePageWrapper } from "./favouritePage.style";
+import { fetchLikedGames } from "./favouriteSlice";
 
 
-export function CartPage() {
+export function FavouritePage() {
     const dispatch = useDispatch()
-    const games = useSelector(state => state.purchasedGamesList.games)
-    const status = useSelector(state => state.purchasedGamesList.status)
+    const games = useSelector(state => state.likedGamesList.games)
+    const status = useSelector(state => state.likedGamesList.status)
     useEffect(() => {
-        dispatch(fetchPurchasedGames())
+        dispatch(fetchLikedGames())
         // eslint-disable-next-line
     }, [])
     return (
-        <CartWrapper>
+        <FavouritePageWrapper>
             <Container>
-                <TitlePrimary text="My games" />
+                <TitlePrimary text="Favourite games" />
                 <CartList>
                     {
                         status === "resolved" ?
                         games.length !== 0 ?
-                        games.map(game => <CartItem key={game.id} game={game} />) : <CartIcon />
-                        : <CartIcon text="You haven't purchased the game yet" />
+                        games.map(game => <CartItem key={game.id} game={game} />) : <CartIcon text="You haven't liked the game yet" />
+                        : <CartIcon text="You haven't liked the game yet" />
                     }
                 </CartList>
             </Container>
-        </CartWrapper>
+        </FavouritePageWrapper>
     )
 }
