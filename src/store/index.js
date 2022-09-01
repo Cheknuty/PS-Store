@@ -5,6 +5,8 @@ import comingSoonSectionReducer from "../molecules/comingSoonSection/comingSoonS
 import exploreReducer from "../pages/explore/exploreSlice";
 import cartReducer from "../pages/cartPage/cartSlice";
 import favouriteReducer from "../pages/favouritePage/favouriteSlice";
+import salesDealsReducer from "../molecules/salesDealsSection/salesDealsSlice";
+import freeToPlayReducer from "../molecules/freeToPlaySection/freeToPlaySlice";
 export default configureStore({
     reducer: {
         trendingList: trendingListReducer,
@@ -12,6 +14,8 @@ export default configureStore({
         comingSoonList: comingSoonSectionReducer,
         allGamesList: exploreReducer,
         purchasedGamesList: cartReducer,
-        likedGamesList: favouriteReducer
+        likedGamesList: favouriteReducer,
+        salesDealsList: salesDealsReducer,
+        freeToPlayList: freeToPlayReducer
     }
 }) 

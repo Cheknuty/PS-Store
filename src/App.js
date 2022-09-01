@@ -16,6 +16,8 @@ import { fetchAllGames } from "./pages/explore/exploreSlice";
 import { Game } from "./pages/game/game.comp";
 import { FavouritePage } from "./pages/favouritePage/favouritePage.comp";
 import { Home } from "./pages/home/home.comp";
+import { fetchSalesDealsGames } from "./molecules/salesDealsSection/salesDealsSlice";
+import { fetchFreeToPlayGames } from "./molecules/freeToPlaySection/freeToPlaySlice";
 function App() {
   const content = useRef()
   const dispatch = useDispatch()
@@ -24,6 +26,8 @@ function App() {
     dispatch(fetchNewReleaseGames())
     dispatch(fetchComingSoonGames())
     dispatch(fetchAllGames())
+    dispatch(fetchSalesDealsGames())
+    dispatch(fetchFreeToPlayGames())
     // eslint-disable-next-line
   },[])
   const clicker = () => {

@@ -1,7 +1,6 @@
 import { useSelector } from "react-redux";
 import { TinyItem } from "../../atoms/tinyItem/tinyItem.comp";
 import { TinyItemSkeleton } from "../../atoms/tinyItemSkeleton/tinyItemSkeleton.comp";
-import { Container } from "../container/container.comp";
 import { TinyList } from "../tinyList/tinyList.comp";
 import { ComingSoonSectionWrapper } from "./comingSoonSection.style";
 
@@ -11,10 +10,9 @@ export function ComingSoonSection() {
     const status = useSelector(state => state.comingSoonList.status)
     return (
         <ComingSoonSectionWrapper>
-            <Container>
-                <TinyList text="Coming Soon">
-                    {
-                        status === "resolved" ?
+            <TinyList text="Coming Soon">
+                {
+                    status === "resolved" ?
                         comingSoonGames.map(game => <TinyItem key={game.id} game={game} />) :
                         <>
                             <TinyItemSkeleton />
@@ -24,9 +22,8 @@ export function ComingSoonSection() {
                             <TinyItemSkeleton />
                             <TinyItemSkeleton />
                         </>
-                    }
-                </TinyList>
-            </Container>
+                }
+            </TinyList>
         </ComingSoonSectionWrapper>
     )
 }
