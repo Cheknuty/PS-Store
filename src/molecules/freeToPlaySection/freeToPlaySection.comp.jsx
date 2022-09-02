@@ -15,7 +15,13 @@ export function FreeToPlaySection() {
                 {
                     status === "resolved" ?
                     games.map(game => <TinyItem key={game.id} game={game} />) :
-                    <TinyItemSkeleton />
+                    <>
+                        <TinyItemSkeleton />
+                        <TinyItemSkeleton />
+                        <TinyItemSkeleton />
+                        <TinyItemSkeleton />
+                        <TinyItemSkeleton />
+                    </>
                 }
             </TinyList>
         </FreeToPlaySectionWrapper>

@@ -42,7 +42,13 @@ export function SalesDealsSection() {
                 {
                     status === "resolved" ?
                     games.map(game => <TinyItem key={game.id} game={game} />) :
-                    <TinyItemSkeleton />
+                    <>
+                        <TinyItemSkeleton />
+                        <TinyItemSkeleton />
+                        <TinyItemSkeleton />
+                        <TinyItemSkeleton />
+                        <TinyItemSkeleton />
+                    </>
                 }
             </ListPrimary>
         </SalesDealsSectionWrapper>

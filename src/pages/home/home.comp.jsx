@@ -15,6 +15,7 @@ import { fetchSalesDealsGames } from "../../molecules/salesDealsSection/salesDea
 import { fetchFreeToPlayGames } from "../../molecules/freeToPlaySection/freeToPlaySlice";
 import { FreeToPlaySection } from "../../molecules/freeToPlaySection/freeToPlaySection.comp";
 import { PSPlusSection } from "../../molecules/PSPlusSection/PSPlusSection.comp";
+import { AllSection } from "../../molecules/allSection/allSection.comp";
 export function Home() {
     const dispatch = useDispatch()
     useEffect(() => {
@@ -37,6 +38,7 @@ export function Home() {
                 <FreeToPlaySection />
             </Container>
             <PSPlusSection />
+            <AllSection />
         </HomeWrapper>
     )
 }
