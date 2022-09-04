@@ -3,11 +3,11 @@ import { DropDownHead } from "../../atoms/dropDownHead/dropDownHead.comp";
 import { DropDownrapper } from "./dropDown.style";
 
 
-export function DropDown() {
+export function DropDown({arr, title, isFunctional}) {
     return(
-        <DropDownrapper>
-            <DropDownHead />
-            <DropDownBody />
+        <DropDownrapper id={title.toLowerCase()}>
+            <DropDownHead title={title} />
+            <DropDownBody arr={arr} isFunctional={isFunctional} />
         </DropDownrapper>
     )
 }

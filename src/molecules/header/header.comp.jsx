@@ -14,7 +14,7 @@ export function Header() {
             <Container>
                 <Logo />
                 <HeaderBox>
-                    <DropDown />
+                    <DropDown title="My Playstation" arr={["Support", "Privacy Policy", "Website", "Terms of Use", "Sitemap"]} />
                     <Avatar />
                     <Like />
                     <Cart />

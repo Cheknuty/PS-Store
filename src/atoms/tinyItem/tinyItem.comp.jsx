@@ -7,7 +7,7 @@ import { LikeIcon } from "../likeIcon/likeIcon.comp";
 export function TinyItem({ game: {fet, title, before, after, img, company, id, isbought, isFav}}) {
     return (
         <TinyItemWrapper>
-        <Link to={`game/${id}`}>
+        <Link to={`../game/${id}`}>
             <TinyItemImg src={img} />
             <TinyItemContent>
                 <TinyItemTitle>{title}</TinyItemTitle>

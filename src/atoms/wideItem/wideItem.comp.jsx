@@ -23,7 +23,7 @@ export function WideItem({game}) {
     }
     return (
         <WideItemWrapper>
-            <Link to={`game/${game.id}`}>
+            <Link to={`/game/${game.id}`}>
                 <WideItemImg src={game.img} />
                 <WideItemText>
                     <Tag text={game.fet}/>

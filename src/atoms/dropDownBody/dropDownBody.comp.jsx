@@ -1,14 +1,13 @@
-import { DropDownBodyItem, DropDownBodyWrapper } from "./dropDownBody.style";
+import { DropDownItem } from "../dropDownItem/dropDownItem.comp";
+import { DropDownBodyWrapper } from "./dropDownBody.style";
 
 
-export function DropDownBody() {
+export function DropDownBody({arr, isFunctional}) {
     return (
         <DropDownBodyWrapper>
-            <DropDownBodyItem>Support</DropDownBodyItem>
-            <DropDownBodyItem>Privacy Policy</DropDownBodyItem>
-            <DropDownBodyItem>Website</DropDownBodyItem>
-            <DropDownBodyItem>Terms of Use</DropDownBodyItem>
-            <DropDownBodyItem>Sitemap</DropDownBodyItem>
+            {
+                arr.map((itm, idx) => <DropDownItem key={idx} text={itm} isFunctional={isFunctional} />)
+            }
         </DropDownBodyWrapper>
     )
 }

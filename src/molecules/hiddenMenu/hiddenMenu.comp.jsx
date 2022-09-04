@@ -12,7 +12,7 @@ export function HiddenMenu() {
                     <Link to="/">DISCOVER</Link>
                 </HiddenMenuItem>
                 <HiddenMenuItem>
-                    <Link to="/">EXPLORE</Link>
+                    <Link to="/explore">EXPLORE</Link>
                 </HiddenMenuItem>
                 <HiddenMenuItem>
                     <Link to="/">COLLECTIONS</Link>

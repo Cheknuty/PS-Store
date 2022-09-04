@@ -1,8 +1,8 @@
 import { DropDownHeadWrapper } from "./dropDownHead.style";
 
 
-export function DropDownHead() {
+export function DropDownHead({title}) {
     return (
-        <DropDownHeadWrapper>My PlayStation</DropDownHeadWrapper>
+        <DropDownHeadWrapper>{title}</DropDownHeadWrapper>
     )
 }

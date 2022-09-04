@@ -11,7 +11,7 @@ export function NavBar() {
 
                 <NavBarBox>
                     <NavLink to="/">DISCOVER </NavLink>|
-                    <NavLink to="/"> EXPLORE</NavLink>
+                    <NavLink to="/explore"> EXPLORE</NavLink>
                 </NavBarBox>
 
                 <NavBarBox>

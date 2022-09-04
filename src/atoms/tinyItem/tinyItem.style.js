@@ -22,6 +22,12 @@ export const TinyItemWrapper = styled.li`
             
         }
     }
+    transition: transform 100ms ease-in-out;
+
+    &:hover {
+        
+        transform: scale(1.02);
+    }
 `
 
 export const TinyItemImg = styled.img`
