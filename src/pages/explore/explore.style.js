@@ -15,6 +15,7 @@ export const ExploreContent = styled.main`
     align-items: flex-start;
     justify-content: space-between;
     margin-top: 30px;
+    padding-bottom: 30px;
 `
 
 export const ExploreBox = styled.div`
@@ -22,6 +23,7 @@ export const ExploreBox = styled.div`
         
         width: 100%;
         & ul {
+            
             @media screen and (min-width: 1400px) {
                 grid-template-columns: repeat(5, 1fr);
             }
@@ -51,12 +53,13 @@ export const ExploreBox = styled.div`
 
     &:nth-child(2) {
         padding-left: 40px;
-        background-color: var(--color-secondary);
-        background-color: rgba(31, 31, 31, 0.95);
-        backdrop-filter: saturate(180%) blur(10px);
-
-
+        width: 230px;
+        
+        
         @media screen and (max-width: 1110px) {
+            background-color: var(--color-secondary);
+            background-color: rgba(31, 31, 31, 0.95);
+            backdrop-filter: saturate(180%) blur(10px);
             padding: 0;
             width: 190px;
             position: fixed;

@@ -30,8 +30,16 @@ export function AboutSection() {
                         <AboutSectionInfoSubtitle>{game.date}</AboutSectionInfoSubtitle>
                     </AboutSectionInfo>
                     <AboutSectionInfo>
+                        <AboutSectionInfoTitle>Genre</AboutSectionInfoTitle>
+                        <AboutSectionInfoSubtitle>{game.genre.join(",  ")}</AboutSectionInfoSubtitle>
+                    </AboutSectionInfo>
+                    <AboutSectionInfo>
+                        <AboutSectionInfoTitle>Features</AboutSectionInfoTitle>
+                        <AboutSectionInfoSubtitle>{game.features.join(",  ")}</AboutSectionInfoSubtitle>
+                    </AboutSectionInfo>
+                    <AboutSectionInfo>
                         <AboutSectionInfoTitle>platform</AboutSectionInfoTitle>
-                        <AboutSectionInfoSubtitle>{game.fet}</AboutSectionInfoSubtitle>
+                        <AboutSectionInfoSubtitle>{game.fet.join(", ")}</AboutSectionInfoSubtitle>
                     </AboutSectionInfo>
                     <CostButtonLight after="Add To Cart" before="" isbought={game.isbought} id={game.id} />
                 </AboutSectionInfoContent>

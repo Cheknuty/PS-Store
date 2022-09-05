@@ -12,7 +12,7 @@ import { fetchAllGames } from "./exploreSlice"
 import { BsFillArrowLeftCircleFill } from "react-icons/bs"
 import { useRef } from "react"
 export function Explore() {
-    const games = useSelector(state => state.allGamesList.games)
+    const games = useSelector(state => state.allGamesList.sortedGames)
     const status = useSelector(state => state.allGamesList.status)
     const dispatch = useDispatch()
     const button = useRef()

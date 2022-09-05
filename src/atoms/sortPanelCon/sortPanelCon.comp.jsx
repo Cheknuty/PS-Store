@@ -3,7 +3,7 @@ import { SortPanelConButton, SortPanelConHeader, SortPanelConList, SortPanelConT
 import { AiOutlineMinus, AiOutlinePlus } from "react-icons/ai"
 import { useRef } from "react";
 
-export function SortPanelCon({title, arr}) {
+export function SortPanelCon({title, arr, id}) {
     const panel = useRef()
 
     function panelToggle() {

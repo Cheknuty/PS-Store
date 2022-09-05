@@ -61,13 +61,15 @@ export const TinyItemCompany = styled.p`
     line-height: 14px;
     margin: 0;
     color: var(--color-explosive-grey);
-    margin-bottom: 11px;
+    margin-bottom: 11px; 
+`
 
-    & + span {
+export const TinyItemTagList = styled.div`
+    display: flex;
+    align-items: center;
+    margin-bottom: 13px;
+
+    & + button {
         margin-bottom: 13px;
     }
-
-    & + span + button {
-        margin-bottom: 13px;
-    } 
 `
