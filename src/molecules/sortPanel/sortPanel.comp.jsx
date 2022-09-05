@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { SortPanelCon } from "../../atoms/sortPanelCon/sortPanelCon.comp";
-import { allFeatures, allGenres, allPlatforms, fetchAllGames, sort } from "../../pages/explore/exploreSlice";
+import { allFeatures, allGenres, allPlatforms, sort } from "../../pages/explore/exploreSlice";
 import { SortPanelBox, SortPanelSearchButton, SortPanelTitle, SortPanelWrapper } from "./sortPanel.style";
 
 
