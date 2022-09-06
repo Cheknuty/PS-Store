@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import URL from "../../var/URL";
 
-const URL = "https://fakegame.herokuapp.com/"
 
 export const fetchSalesDealsGames = createAsyncThunk(
     'games/fetchSalesDealsGames',
