@@ -13,10 +13,18 @@ export const fetchAllGames = createAsyncThunk(
             const data = await res.json()
             const state = getState()
             if(state.allGamesList.status === "resolved") {
-                const fetA = platform !== "def" ? [platform] : []
-                const genreA = genre !== "def" ? [genre] : []
-                const featuresA = features !== "def" ? [features] : []
-                dispatch(exploreSlice.actions.sort({fet: fetA, genre: genreA, features: featuresA}))
+
+                if(platform === "def" && genre === "def" && features === "def")  {
+                    dispatch(exploreSlice.actions.addGames())
+                    console.log("def")
+                }
+                else{
+                    const fetA = platform !== "def" ? [platform] : []
+                    const genreA = genre !== "def" ? [genre] : []
+                    const featuresA = features !== "def" ? [features] : []
+                    dispatch(exploreSlice.actions.sort({fet: fetA, genre: genreA, features: featuresA}))
+                    console.log("not def")
+                }
             }
             return data;
 
@@ -25,6 +33,7 @@ export const fetchAllGames = createAsyncThunk(
         }
     }
 )
+
 
 const exploreSlice = createSlice({
     name: "exploreSlice",
@@ -113,6 +122,9 @@ const exploreSlice = createSlice({
             state.sortedGames = result
 
             
+        },
+        addGames(state) {
+            state.sortedGames.push(...state.games)
         }
     },
 
