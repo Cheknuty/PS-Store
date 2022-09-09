@@ -11,21 +11,21 @@ export const fetchAllGames = createAsyncThunk(
                 throw new Error("Server Error!")
             }
             const data = await res.json()
-            const state = getState()
-            if(state.allGamesList.status === "resolved") {
+            // const state = getState()
+            // if(state.allGamesList.status === "resolved") {
 
-                if(platform === "def" && genre === "def" && features === "def")  {
-                    dispatch(exploreSlice.actions.addGames())
-                    console.log("def")
-                }
-                else{
-                    const fetA = platform !== "def" ? [platform] : []
-                    const genreA = genre !== "def" ? [genre] : []
-                    const featuresA = features !== "def" ? [features] : []
-                    dispatch(exploreSlice.actions.sort({fet: fetA, genre: genreA, features: featuresA}))
-                    console.log("not def")
-                }
-            }
+            //     if(platform === "def" && genre === "def" && features === "def")  {
+            //         dispatch(exploreSlice.actions.addGames())
+            //         console.log("def")
+            //     }
+            //     else{
+            //         const fetA = platform !== "def" ? [platform] : []
+            //         const genreA = genre !== "def" ? [genre] : []
+            //         const featuresA = features !== "def" ? [features] : []
+            //         dispatch(exploreSlice.actions.sort({fet: fetA, genre: genreA, features: featuresA}))
+            //         console.log("not def")
+            //     }
+            // }
             return data;
 
         } catch (error) {
@@ -136,6 +136,7 @@ const exploreSlice = createSlice({
         [fetchAllGames.fulfilled]: (state, action) => {
             state.status = "resolved";
             state.games = action.payload;
+            state.sortedGames = action.payload
         },
         [fetchAllGames.rejected]: (state) => {
             state.status = "rejected"
