@@ -124,7 +124,7 @@ const exploreSlice = createSlice({
             
         },
         addGames(state) {
-            state.sortedGames.push(...state.games)
+            state.sortedGames = state.games
         }
     },
 
