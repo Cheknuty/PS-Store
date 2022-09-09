@@ -12,7 +12,7 @@ export function Game() {
     
 
     useEffect(() => {
-      dispatch(fetchAllGames())
+      dispatch(fetchAllGames({platform: "def", genre: "def", feature: "def"}))
       // eslint-disable-next-line
     }, [])
     

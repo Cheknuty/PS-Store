@@ -48,6 +48,7 @@ export function SalesDealsSection() {
                         <TinyItemSkeleton />
                         <TinyItemSkeleton />
                         <TinyItemSkeleton />
+                        <TinyItemSkeleton />
                     </>
                 }
             </ListPrimary>

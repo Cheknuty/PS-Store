@@ -32,7 +32,7 @@ export function AllSection() {
                     <TitlePrimary text="Genres" />
                     <GenresList>
                         {
-                            genres.map((itm, idx) => <GenresItem key={idx} img={itm.img} img2x={itm.img2x} />)
+                            genres.map((itm, idx) => <GenresItem key={idx} img={itm.img} img2x={itm.img2x} itm={itm} />)
                         }
                     </GenresList>
                 </AllSectionBox>

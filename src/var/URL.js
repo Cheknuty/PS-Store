@@ -1,3 +1,3 @@
-const URL = "https://fakegame2.herokuapp.com/"
+const URL = "https://fakegame.herokuapp.com/"
 
 export default URL

@@ -11,18 +11,21 @@ import { useEffect } from "react"
 import { fetchAllGames } from "./exploreSlice"
 import { BsFillArrowLeftCircleFill } from "react-icons/bs"
 import { useRef } from "react"
+import { useParams } from "react-router-dom"
+import { BackButton } from "../../atoms/backButton/backButton.comp"
 export function Explore() {
     const games = useSelector(state => state.allGamesList.sortedGames)
     const status = useSelector(state => state.allGamesList.status)
     const dispatch = useDispatch()
     const button = useRef()
+    const { platform, genre, features } = useParams()
 
     function rightPanelToggle() {
         button.current.dataset.open === "true" ? button.current.removeAttribute("data-open") : button.current.setAttribute("data-open", "true")
     }
-
+    
     useEffect(() => {
-        dispatch(fetchAllGames())
+        dispatch(fetchAllGames({platform, genre, features}))
         // eslint-disable-next-line
     },[])
     return (
@@ -32,6 +35,7 @@ export function Explore() {
                 <ExploreContent>
                     <ExploreBox>
                         <ExploreTitleWrapper>
+                            <BackButton />
                             <TitlePrimary text="New Releases" />
                         </ExploreTitleWrapper>
                         <ListPrimary>

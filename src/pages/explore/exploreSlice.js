@@ -4,13 +4,20 @@ import URL from "../../var/URL";
 
 export const fetchAllGames = createAsyncThunk(
     'games/fetchAllGames',
-    async function (_, { rejectWithValue }) {
+    async function ({platform, genre, features}, { rejectWithValue, dispatch, getState }) {
         try {
             const res = await fetch(URL + `all`);
             if (!res.ok) {
                 throw new Error("Server Error!")
             }
             const data = await res.json()
+            const state = getState()
+            if(state.allGamesList.status === "resolved") {
+                const fetA = platform !== "def" ? [platform] : []
+                const genreA = genre !== "def" ? [genre] : []
+                const featuresA = features !== "def" ? [features] : []
+                dispatch(exploreSlice.actions.sort({fet: fetA, genre: genreA, features: featuresA}))
+            }
             return data;
 
         } catch (error) {
@@ -71,8 +78,6 @@ const exploreSlice = createSlice({
         },
 
         sort(state, { payload: { fet, genre, features } }) {
-
-                
             let stat = null
             const result = []
 
@@ -101,13 +106,10 @@ const exploreSlice = createSlice({
                     } if(!stat) continue
                 } else stat = true
 
-                if(stat) {
-                    console.log(i, state.games[i].title)
-                }
+            
                 result.push(state.games[i])
             }
 
-            console.log(result)
             state.sortedGames = result
 
             
@@ -122,7 +124,6 @@ const exploreSlice = createSlice({
         [fetchAllGames.fulfilled]: (state, action) => {
             state.status = "resolved";
             state.games = action.payload;
-            state.sortedGames = action.payload;
         },
         [fetchAllGames.rejected]: (state) => {
             state.status = "rejected"

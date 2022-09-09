@@ -27,24 +27,72 @@ const genresSlice = createSlice({
     name: "genresList",
     initialState: {
         genres: [
-            { img: gen1, img2x: gen12x },
-            { img: gen2, img2x: gen22x },
-            { img: gen3, img2x: gen32x },
-            { img: gen4, img2x: gen42x },
-            { img: gen5, img2x: gen52x },
-            { img: gen6, img2x: gen62x },
-            { img: gen7, img2x: gen72x },
-            { img: gen8, img2x: gen82x },
-            { img: gen9, img2x: gen92x },
-            { img: gen10, img2x: gen102x },
-            { img: gen11, img2x: gen112x },
-            { img: gen12, img2x: gen122x },
+            {
+                img: gen1,
+                text: "Action",
+                img2x: gen12x
+            },
+            {
+                img: gen2,
+                text: "Arcade",
+                img2x: gen22x
+            },
+            {
+                img: gen3,
+                text: "Fighting",
+                img2x: gen32x
+            },
+            {
+                img: gen4,
+                text: "Horror",
+                img2x: gen42x
+            },
+            {
+                img: gen5,
+                text: "Platform",
+                img2x: gen52x
+            },
+            {
+                img: gen6,
+                text: "Racing",
+                img2x: gen62x
+            },
+            {
+                img: gen7,
+                text: "RPG",
+                img2x: gen72x
+            },
+            {
+                img: gen8,
+                text: "Shooter",
+                img2x: gen82x
+            },
+            {
+                img: gen9,
+                text: "Simulation",
+                img2x: gen92x
+            },
+            {
+                img: gen10,
+                text: "Kids & Family",
+                img2x: gen102x
+            },
+            {
+                img: gen11,
+                text: "Rhythm",
+                img2x: gen112x
+            },
+            {
+                img: gen12,
+                text: "Sports",
+                img2x: gen122x
+            },
         ],
         status: "idle",
         error: null,
     },
     reducers: {
-        
+
     },
 })
 

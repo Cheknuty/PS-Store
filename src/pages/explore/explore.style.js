@@ -84,7 +84,7 @@ export const ExploreBox = styled.div`
 export const ExploreTitleWrapper = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     margin-bottom: 30px;
 
     & h2 {
@@ -108,6 +108,13 @@ export const ExploreTitleWrapper = styled.div`
             background-color: var(--color-secondary);
             
             color: var(--color-light);
+        }
+    }
+
+    & a  {
+        margin-right: 30px;
+        & svg {
+            display: block;
         }
     }
 `

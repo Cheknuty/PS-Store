@@ -12,7 +12,7 @@ const moreSlice = createSlice({
             {
                 img: more1,
                 img2x: more12x,
-                text: "ADD-ONS"
+                text: "PS5"
             },
             {
                 img: more2,
@@ -22,7 +22,7 @@ const moreSlice = createSlice({
             {
                 img: more3,
                 img2x: more32x,
-                text: "PS2 CLASSICS"
+                text: "PS2"
             },
         ],
         status: "idle",

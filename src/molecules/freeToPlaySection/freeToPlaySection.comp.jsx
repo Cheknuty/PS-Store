@@ -21,6 +21,7 @@ export function FreeToPlaySection() {
                         <TinyItemSkeleton />
                         <TinyItemSkeleton />
                         <TinyItemSkeleton />
+                        <TinyItemSkeleton />
                     </>
                 }
             </TinyList>

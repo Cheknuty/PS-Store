@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { BackButton } from "../../atoms/backButton/backButton.comp";
 import { CartIcon } from "../../atoms/cartIcon/cartIcon.comp";
 import { CartItem } from "../../atoms/cartItem/cartItem.comp";
 import { CartList } from "../../atoms/cartList/cartList.comp";
 import { TitlePrimary } from "../../atoms/titlePrimary/titlePrimary.comp";
 import { Container } from "../../molecules/container/container.comp";
-import { CartWrapper } from "./cartPage.style";
+import { CartTitleWrapper, CartWrapper } from "./cartPage.style";
 import { fetchPurchasedGames } from "./cartSlice";
 
 
@@ -20,7 +21,10 @@ export function CartPage() {
     return (
         <CartWrapper>
             <Container>
-                <TitlePrimary text="My games" />
+                <CartTitleWrapper>
+                    <BackButton />
+                    <TitlePrimary text="My games" />
+                </CartTitleWrapper>
                 <CartList>
                     {
                         status === "resolved" ?

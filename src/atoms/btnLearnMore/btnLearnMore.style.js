@@ -27,6 +27,7 @@ export const BtnLearnMoreWrapperYellow = styled.button`
     line-height: 22px;
     text-transform: uppercase;
     color: var(--color-light);
+    cursor: pointer;
 
 
     &:hover {

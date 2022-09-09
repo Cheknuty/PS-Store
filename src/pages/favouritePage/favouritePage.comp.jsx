@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { BackButton } from "../../atoms/backButton/backButton.comp";
 import { CartIcon } from "../../atoms/cartIcon/cartIcon.comp";
 import { CartItem } from "../../atoms/cartItem/cartItem.comp";
 import { CartList } from "../../atoms/cartList/cartList.comp";
 import { TitlePrimary } from "../../atoms/titlePrimary/titlePrimary.comp";
 import { Container } from "../../molecules/container/container.comp";
-import { FavouritePageWrapper } from "./favouritePage.style";
+import { FavouritePageTitleWrapper, FavouritePageWrapper } from "./favouritePage.style";
 import { fetchLikedGames } from "./favouriteSlice";
 
 
@@ -20,7 +21,10 @@ export function FavouritePage() {
     return (
         <FavouritePageWrapper>
             <Container>
-                <TitlePrimary text="Favourite games" />
+                <FavouritePageTitleWrapper>
+                    <BackButton />
+                    <TitlePrimary text="Favourite games" />
+                </FavouritePageTitleWrapper>
                 <CartList>
                     {
                         status === "resolved" ?
