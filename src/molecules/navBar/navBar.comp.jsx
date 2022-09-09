@@ -1,4 +1,4 @@
-import { NavLink, useMatch } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { Container } from "../container/container.comp";
 import { NavBarBox, NavBarWrapper } from "./navBar.style";
 

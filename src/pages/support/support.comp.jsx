@@ -22,19 +22,19 @@ export function Support() {
                     My social nets below
                 </SupportAbout>
                 <SupportSoical>
-                    <a href="https://www.instagram.com/xikmatjon_/" target={"_blank"}>
+                    <a href="https://www.instagram.com/xikmatjon_/" target={"_blank"} rel="noreferrer">
                         <BsInstagram />
                     </a>
-                    <a href="https://www.linkedin.com/in/khikmatjon-azizov-1865b024a/" target={"_blank"}>
+                    <a href="https://www.linkedin.com/in/khikmatjon-azizov-1865b024a/" target={"_blank"} rel="noreferrer">
                         <BsLinkedin />
                     </a>
-                    <a href="https://github.com/Cheknuty" target={"_blank"}>
+                    <a href="https://github.com/Cheknuty" target={"_blank"} rel="noreferrer">
                         <BsGithub />
                     </a>
-                    <a href="azizovxikmatjon04@gmail.com" target={"_blank"}>
+                    <a href="azizovxikmatjon04@gmail.com" target={"_blank"} rel="noreferrer">
                         <HiOutlineMail />
                     </a>
-                    <a href="https://t.me/Cheknuty" target={"_blank"}>
+                    <a href="https://t.me/Cheknuty" target={"_blank"} rel="noreferrer">
                         <BsTelegram />
                     </a>
                 </SupportSoical>
