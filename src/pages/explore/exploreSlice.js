@@ -4,28 +4,13 @@ import URL from "../../var/URL";
 
 export const fetchAllGames = createAsyncThunk(
     'games/fetchAllGames',
-    async function ({platform, genre, features}, { rejectWithValue, dispatch, getState }) {
+    async function (_, { rejectWithValue }) {
         try {
             const res = await fetch(URL + `all`);
             if (!res.ok) {
                 throw new Error("Server Error!")
             }
             const data = await res.json()
-            // const state = getState()
-            // if(state.allGamesList.status === "resolved") {
-
-            //     if(platform === "def" && genre === "def" && features === "def")  {
-            //         dispatch(exploreSlice.actions.addGames())
-            //         console.log("def")
-            //     }
-            //     else{
-            //         const fetA = platform !== "def" ? [platform] : []
-            //         const genreA = genre !== "def" ? [genre] : []
-            //         const featuresA = features !== "def" ? [features] : []
-            //         dispatch(exploreSlice.actions.sort({fet: fetA, genre: genreA, features: featuresA}))
-            //         console.log("not def")
-            //     }
-            // }
             return data;
 
         } catch (error) {
@@ -82,50 +67,47 @@ const exploreSlice = createSlice({
                     }
                 }
             }
-
+            
             state.platforms = platforms
         },
-
+        
         sort(state, { payload: { fet, genre, features } }) {
+            state.status = "loading"
             let stat = null
             const result = []
-
-            for (let i = 0; i < state.games.length; i++) {
-                if(fet.length) {
-                    for(let j = 0; j < state.games[i].fet.length; j++) {
-                        if(fet.includes(state.games[i].fet[j])){stat = true; break}
-                        else stat = false
-                    } if(!stat) continue
-                } else stat = true
-
-
-                if(genre.length) {
-                    for(let j = 0; j < state.games[i].genre.length; j++) {
-                        if(genre.includes(state.games[i].genre[j])) {stat = true; break}
-                        else stat = false
-                    } if(!stat) continue
-                } else stat = true
-
-
-
-                if(features.length) {
-                    for(let j = 0; j < state.games[i].genre.length; j++) {
-                        if(features.includes(state.games[i].features[j])) {stat = true; break}
-                        else stat = false
-                    } if(!stat) continue
-                } else stat = true
-
-            
-                result.push(state.games[i])
+                for (let i = 0; i < state.games.length; i++) {
+                    if(fet.length) {
+                        for(let j = 0; j < state.games[i].fet.length; j++) {
+                            if(fet.includes(state.games[i].fet[j])){stat = true; break}
+                            else stat = false
+                        } if(!stat) continue
+                    } else stat = true
+    
+    
+                    if(genre.length) {
+                        for(let j = 0; j < state.games[i].genre.length; j++) {
+                            if(genre.includes(state.games[i].genre[j])) {stat = true; break}
+                            else stat = false
+                        } if(!stat) continue
+                    } else stat = true
+    
+    
+    
+                    if(features.length) {
+                        for(let j = 0; j < state.games[i].genre.length; j++) {
+                            if(features.includes(state.games[i].features[j])) {stat = true; break}
+                            else stat = false
+                        } if(!stat) continue
+                    } else stat = true
+    
+                
+                    result.push(state.games[i])
+                }
+    
+                state.sortedGames = result
+                console.log(state.sortedGames)
+                state.status = "resolved"
             }
-
-            state.sortedGames = result
-
-            
-        },
-        addGames(state) {
-            state.sortedGames = state.games
-        }
     },
 
     extraReducers: {
@@ -136,7 +118,6 @@ const exploreSlice = createSlice({
         [fetchAllGames.fulfilled]: (state, action) => {
             state.status = "resolved";
             state.games = action.payload;
-            state.sortedGames = action.payload
         },
         [fetchAllGames.rejected]: (state) => {
             state.status = "rejected"

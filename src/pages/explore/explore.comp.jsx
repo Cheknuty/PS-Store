@@ -8,26 +8,35 @@ import { ExploreBox, ExploreButton, ExploreContent, ExploreTitleWrapper, Explore
 import { TinyItemSkeleton } from "../../atoms/tinyItemSkeleton/tinyItemSkeleton.comp"
 import { SortPanel } from "../../molecules/sortPanel/sortPanel.comp"
 import { useEffect } from "react"
-import { fetchAllGames } from "./exploreSlice"
+import { fetchAllGames, sort } from "./exploreSlice"
 import { BsFillArrowLeftCircleFill } from "react-icons/bs"
 import { useRef } from "react"
 import { useParams } from "react-router-dom"
 import { BackButton } from "../../atoms/backButton/backButton.comp"
 export function Explore() {
+    const Allgames = useSelector(state => state.allGamesList.games)
     const games = useSelector(state => state.allGamesList.sortedGames)
     const status = useSelector(state => state.allGamesList.status)
     const dispatch = useDispatch()
     const button = useRef()
     const { platform, genre, features } = useParams()
-
     function rightPanelToggle() {
         button.current.dataset.open === "true" ? button.current.removeAttribute("data-open") : button.current.setAttribute("data-open", "true")
     }
-    
     useEffect(() => {
-        dispatch(fetchAllGames({platform, genre, features}))
+        if(status === "idle") {
+            dispatch(fetchAllGames())
+            console.log("def", games)
+        }
+        if((platform !== "def" || genre !== "def" || features !== "def")) {
+            const platformA = platform === "def" ? [] : [platform]
+            const genreA = genre === "def" ? [] : [genre]
+            const featuresA = features === "def" ? [] : [features]
+            console.log("no def", status)
+            dispatch(sort({fet: platformA, genre: genreA, features: featuresA}))
+        }
         // eslint-disable-next-line
-    },[])
+    },[Allgames])
     return (
         <Container>
             <ExploreWrapper>
