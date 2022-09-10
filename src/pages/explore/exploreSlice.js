@@ -107,6 +107,9 @@ const exploreSlice = createSlice({
                 state.sortedGames = result
                 console.log(state.sortedGames)
                 state.status = "resolved"
+            },
+            addAllGames(state) {
+                
             }
     },
 
@@ -118,6 +121,7 @@ const exploreSlice = createSlice({
         [fetchAllGames.fulfilled]: (state, action) => {
             state.status = "resolved";
             state.games = action.payload;
+            state.sortedGames = action.payload
         },
         [fetchAllGames.rejected]: (state) => {
             state.status = "rejected"
