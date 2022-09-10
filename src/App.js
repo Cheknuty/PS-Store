@@ -49,7 +49,7 @@ function App() {
             <Route path="/game/:id" element={<Game />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/favourite" element={<FavouritePage />} />
-            <Route path="/explore/:platform/:genre/:features" element={<Explore />} />
+            <Route path="/explore/:platform/:genre/:features/:word" element={<Explore />} />
             <Route path="/support" element={<Support />} />
           </Routes>
         </AppWrapper>

@@ -20,7 +20,7 @@ export function Header() {
                     <Cart />
                     <SearchInput />
                 </HeaderBox>
-                <MenuButton />
+                <MenuButton state="open" />
             </Container>
         </HeaderWrapper>
     )

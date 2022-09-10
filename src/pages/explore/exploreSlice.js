@@ -19,6 +19,23 @@ export const fetchAllGames = createAsyncThunk(
     }
 )
 
+export const searchGames = createAsyncThunk(
+    'games/searchGames',
+    async function(word, {rejectWithValue}) {
+        try {
+            const res = await fetch(URL + `all?q=${word}`);
+            if (!res.ok) {
+                throw new Error("Server Error!")
+            }
+            const data = await res.json()
+            console.log(data)
+            return data;
+        } catch (error) {
+            return rejectWithValue(error.message)
+        }
+    }
+)
+
 
 const exploreSlice = createSlice({
     name: "exploreSlice",
@@ -107,9 +124,6 @@ const exploreSlice = createSlice({
                 state.sortedGames = result
                 console.log(state.sortedGames)
                 state.status = "resolved"
-            },
-            addAllGames(state) {
-                
             }
     },
 
@@ -125,7 +139,18 @@ const exploreSlice = createSlice({
         },
         [fetchAllGames.rejected]: (state) => {
             state.status = "rejected"
-        }
+        },
+        [searchGames.pending]: (state) => {
+            state.status = "loading";
+            state.error = null;
+        },
+        [searchGames.fulfilled]: (state, action) => {
+            state.status = "resolved";
+            state.sortedGames = action.payload;
+        },
+        [searchGames.rejected]: (state) => {
+            state.status = "rejected"
+        },
     }
 })
 
