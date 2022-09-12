@@ -26,13 +26,11 @@ export function Explore() {
     useEffect(() => {
         if(status === "idle") {
             dispatch(fetchAllGames())
-            console.log("def", games)
         }
         if((platform !== "def" || genre !== "def" || features !== "def")) {
             const platformA = platform === "def" ? [] : [platform]
             const genreA = genre === "def" ? [] : [genre]
             const featuresA = features === "def" ? [] : [features]
-            console.log("no def", status)
             dispatch(sort({fet: platformA, genre: genreA, features: featuresA}))
         }
         // eslint-disable-next-line

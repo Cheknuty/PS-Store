@@ -122,7 +122,6 @@ const exploreSlice = createSlice({
                 }
     
                 state.sortedGames = result
-                console.log(state.sortedGames)
                 state.status = "resolved"
             }
     },
